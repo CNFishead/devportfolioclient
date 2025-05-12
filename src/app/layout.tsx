@@ -28,6 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div className={styles.videoContainer}>
+          <video
+            src="https://res.cloudinary.com/wulfdev/video/upload/v1715257457/18324-291012885_large_sjnfy1.mp4"
+            autoPlay
+            loop
+            muted
+          />
+        </div>
         <div className={styles.layoutRoot}>
           <aside className={styles.sidebar}>
             <Sidebar />

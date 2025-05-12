@@ -21,18 +21,9 @@ const Sidebar = () => {
         <h2 className={styles.email}>cnfishead@gmail.com</h2>
         <h3 className={styles.location}>Based in Morristown, TN</h3>
 
-        <p className={styles.copyright}>&copy; {new Date().getFullYear()} WulfDevelopments. All Rights Reserved</p>
-
         <div className={styles.buttonContainer}>
           {socialLinks.map((link) => (
-            <Link
-              key={link.id}
-              href={link.url} 
-              target="_blank"
-              rel="noreferrer"
-              aria-label={link.name}
-              passHref
-            >
+            <Link key={link.id} href={link.url} target="_blank" rel="noreferrer" aria-label={link.name} passHref>
               <span className={styles.icon}>{link.icon}</span>
             </Link>
           ))}

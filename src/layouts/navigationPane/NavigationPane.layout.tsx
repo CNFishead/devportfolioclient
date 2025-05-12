@@ -7,9 +7,12 @@ const NavigationPane = () => {
   return (
     <nav className={styles.container} aria-label="Primary Navigation">
       {pages.map((page) => (
-        <Link key={page.title} href={page.url} className={styles.navigationItem} aria-label={page.title}>
-          <span className={styles.icon}>{page.icon}</span>
-        </Link>
+        <div key={page.title} className={styles.itemWrapper}>
+          <Link href={page.url} className={styles.navigationItem} aria-label={page.title}>
+            <span className={styles.icon}>{page.icon}</span>
+            <span className={styles.tooltip}>{page.tooltip}</span>
+          </Link>
+        </div>
       ))}
     </nav>
   );
