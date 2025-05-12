@@ -1,0 +1,114 @@
+@use "@/styles/globals.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem 1.5rem;
+  // background-color: rgba(var(--primary-rgb), 0.9);
+  color: white;
+  height: 100%;
+  overflow-y: auto;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.header {
+  margin-bottom: 1rem;
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--quaternary);
+  }
+}
+
+.profileImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.profileImage {
+  border-radius: 50%;
+  border: 2px solid var(--tertiary);
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .email,
+  .location {
+    font-size: 0.9rem;
+    color: var(--quaternary-dark);
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: var(--quaternary-dark);
+  }
+
+  .buttonContainer {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include mobile {
+      justify-content: center;
+    }
+
+    .icon {
+      font-size: 2rem;
+      color: var(--tertiary);
+      border-radius: 50%;
+      // background-color: rgba(var(--tertiary-rgb), 0.1); 
+      display: grid;
+      place-items: center;
+      transition: background-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: rgba(var(--tertiary-rgb), 0.3);
+        color: white;
+      }
+    }
+  }
+
+  .actionContainer {
+    margin-top: 1.5rem;
+
+    .actionButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: var(--secondary-light);
+      }
+
+      .icon {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
