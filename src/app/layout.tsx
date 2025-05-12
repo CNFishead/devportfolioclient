@@ -34,8 +34,13 @@ export default function RootLayout({
             autoPlay
             loop
             muted
-          />
+            playsInline
+            aria-hidden="true"
+          >
+            <track kind="captions" srcLang="en" label="No captions available" />
+          </video>
         </div>
+
         <div className={styles.layoutRoot}>
           <aside className={styles.sidebar}>
             <Sidebar />

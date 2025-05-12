@@ -1,0 +1,41 @@
+@use "@/styles/globals.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem;
+  background-color: transparent;
+  overflow-y: auto;
+  ::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.01); 
+    z-index: -1;
+  }
+}
+
+.section {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: transparent;
+  transition: all 0.3s ease;
+
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+.sectionHeader {
+  margin-bottom: 1rem;
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--quaternary);
+  }
+}
