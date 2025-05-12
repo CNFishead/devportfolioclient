@@ -1,19 +1,61 @@
 @use "@/styles/globals.scss" as *;
 
 .container {
+  width: 250px;
+  background-color: var(--primary-dark);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 2rem 1.5rem;
-  // background-color: rgba(var(--primary-rgb), 0.9);
   color: white;
-  height: 100%;
-  overflow-y: auto;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  height: 100dvh;
+  position: relative;
+  z-index: 1000;
+  &.open {
+    @include tablet {
+      width: 80%;
+      // max-width: 300px;
+      padding: 1rem;
+    }
+  }
+  @include tablet {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .toggleButton {
+    display: none;
 
-  @include mobile {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 1rem;
+      left: 0;
+      z-index: 1100;
+      background: var(--secondary-dark);
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: var(--secondary);
+      }
+    }
+
+    &.openBtn {
+      left: calc(80% - 1rem); // Adjust depending on sidebar width
+    }
   }
 }
 
@@ -73,7 +115,7 @@
       font-size: 2rem;
       color: var(--tertiary);
       border-radius: 50%;
-      // background-color: rgba(var(--tertiary-rgb), 0.1); 
+      // background-color: rgba(var(--tertiary-rgb), 0.1);
       display: grid;
       place-items: center;
       transition: background-color 0.2s ease;
@@ -113,4 +155,17 @@
       }
     }
   }
+}
+.overlay {
+  @include tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+  }
+
+  // display: none;
 }
