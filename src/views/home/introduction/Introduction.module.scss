@@ -1,0 +1,53 @@
+@use '@/styles/globals.scss' as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--quaternary);
+}
+
+.name {
+  color: var(--tertiary);
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--quaternary-dark);
+}
+
+.highlight {
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    var(--tertiary) 0%,
+    var(--secondary-light) 50%,
+    var(--tertiary-light) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.descriptor {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: var(--quaternary-dark);
+}

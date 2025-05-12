@@ -1,0 +1,87 @@
+@import "@/styles/globals.scss";
+
+.container {
+  .sectionHeader {
+    .sectionTitle {
+      .textFlair {
+        // extend the textDecoration mixin to this class
+
+        background: linear-gradient(90deg, #78c1f3 0%, #9be8d8 25%, #e2f6ca 75%, #f8fdcf 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+  .sectionBody {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .historyContainer {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .historyItem {
+        margin: 0 2%;
+      }
+      ::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #656565;
+        border-radius: 50%;
+        left: -6px;
+        top: 7px;
+        transition: 0.3s;
+      }
+      ::after {
+        content: "";
+        background: #333333;
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        z-index: -1;
+      }
+      &:hover {
+        ::before {
+          background: var(--tertiary);
+        }
+        ::after {
+          background: var(--tertiary-dark);
+        }
+      }
+    }
+  }
+}
+.historyContainer {
+  margin-bottom: 2rem;
+}
+
+.jobTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--quaternary);
+}
+
+.dates {
+  font-size: 0.9rem;
+  color: var(--quaternary-dark);
+  margin-bottom: 0.75rem;
+}
+
+.pointList {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.point {
+  margin-bottom: 0.5rem;
+
+  .pointText {
+    font-size: 1rem;
+    color: var(--quaternary-dark);
+  }
+}

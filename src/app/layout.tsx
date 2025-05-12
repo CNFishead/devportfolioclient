@@ -4,6 +4,7 @@ import styles from "./layout.module.scss"; // SCSS module import
 import "./globals.css";
 import Sidebar from "@/layouts/sidebar/Sidebar.layout";
 import NavigationPane from "@/layouts/navigationPane/NavigationPane.layout";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,13 +43,15 @@ export default function RootLayout({
         </div>
 
         <div className={styles.layoutRoot}>
-          <aside className={styles.sidebar}>
-            <Sidebar />
-          </aside>
-          <main className={styles.mainContent}>{children}</main>
-          <nav className={styles.navPane}>
-            <NavigationPane />
-          </nav>
+          <ReactQueryProvider>
+            <aside className={styles.sidebar}>
+              <Sidebar />
+            </aside>
+            <main className={styles.mainContent}>{children}</main>
+            <nav className={styles.navPane}>
+              <NavigationPane />
+            </nav>
+          </ReactQueryProvider>
         </div>
       </body>
     </html>

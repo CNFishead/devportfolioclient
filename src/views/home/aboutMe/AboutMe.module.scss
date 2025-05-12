@@ -1,0 +1,60 @@
+@use "@/styles/globals.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+.sectionHeader {
+  text-align: center;
+
+  .header {
+    font-size: clamp(1.5rem, 4vw, 2.75rem);
+    font-weight: bold;
+    color: var(--quaternary);
+  }
+
+  .title {
+    color: var(--secondary-light);
+  }
+
+  .subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--quaternary-dark);
+  }
+
+  .jobTitle {
+    color: var(--tertiary);
+    font-weight: 600;
+  }
+}
+
+.sectionBody {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--quaternary-dark);
+
+  strong {
+    color: var(--tertiary);
+    font-weight: 600;
+  }
+}
+.paragraph {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: var(--quaternary-dark);
+
+  strong {
+    color: var(--tertiary);
+    font-weight: 600;
+  }
+}

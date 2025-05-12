@@ -1,14 +1,13 @@
-// import Introduction from "@/views/home/introduction/Introduction.view";
+import Introduction from "@/views/home/introduction/Introduction.component";
 import { FaBlog, FaHome } from "react-icons/fa";
 import styles from "../views/home/Home.module.scss";
-import { BsBriefcase, BsColumnsGap, BsGripVertical, BsPerson } from "react-icons/bs";
-// import AboutMe from "@/views/home/aboutme/AboutMe.view";
-// import WorkHistory from "@/views/home/workHistory/WorkHistory.view";
-// import Blog from "@/views/home/blog/Blog.view";
-// import Portfolio from "@/views/home/portfolio/Porfolio.view";
+import { BsBriefcase, BsColumnsGap, BsPerson } from "react-icons/bs";
 import { IoIosMail } from "react-icons/io";
-// import ContactForm from "@/views/home/contact/ContactForm.view";
 import { ReactElement } from "react";
+import AboutMe from "@/views/home/aboutMe/AboutMe.component";
+import WorkHistory from "@/views/home/workHistory/WorkHistory.view";
+import Portfolio from "@/views/home/portfolio/Porfolio.view";
+import Blog from "@/views/home/blog/Blog.view";
 
 export interface Views {
   _id: number;
@@ -31,7 +30,7 @@ export default [
     description: "A brief introduction of the developer",
     link: "introduction",
     icon: <FaHome className={styles.icon} />,
-    // component: <Introduction />,
+    component: <Introduction />,
     tooltip: "Introduction",
   },
   {
@@ -40,7 +39,7 @@ export default [
     description: "A brief description of the developer",
     link: "aboutme",
     icon: <BsPerson className={styles.icon} />,
-    // component: <AboutMe />,
+    component: <AboutMe />,
     tooltip: "About",
   },
   {
@@ -49,7 +48,7 @@ export default [
     description: "Developer work history",
     link: "work-history",
     icon: <BsBriefcase className={styles.icon} />,
-    // component: <WorkHistory />,
+    component: <WorkHistory />,
     tooltip: "About",
   },
   {
@@ -58,7 +57,7 @@ export default [
     description: "Developer portfolio",
     link: "portfolio",
     icon: <BsColumnsGap className={styles.icon} />,
-    // component: <Portfolio />,
+    component: <Portfolio />,
     tooltip: "About",
   },
   {
@@ -67,7 +66,7 @@ export default [
     description: "Blog posts that are featured on the homepage",
     link: "blog",
     icon: <FaBlog className={styles.icon} />,
-    // component: <Blog />,
+    component: <Blog />,
     tooltip: "Blog",
   },
   {
