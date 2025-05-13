@@ -31,7 +31,7 @@ const Introduction = () => {
       </motion.h2>
 
       <motion.p className={styles.descriptor} initial="hidden" animate="visible" custom={2} variants={textVariants}>
-        I'm a results-driven Software Engineer and full-stack developer with a passion for building scalable,
+        I&apos;m a results-driven Software Engineer and full-stack developer with a passion for building scalable,
         high-performance applications. As the founder and lead developer of ShepherdCMS, I design tools that help
         churches manage volunteer coordination, digital check-ins, and data-driven insights. I specialize in cloud
         architecture, API design, and end-to-end system development — delivering user-focused solutions that are both
