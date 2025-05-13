@@ -42,7 +42,11 @@
     height: 42px;
     transition: background-color 0.2s ease;
     text-decoration: none;
-
+    &.active {
+      opacity: 1;
+      font-weight: bold;
+      border-bottom: 2px solid var(--tertiary);
+    }
     &:hover {
       .icon {
         color: rgba(var(--secondary-rgb), 0.95);

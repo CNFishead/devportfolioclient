@@ -8,6 +8,7 @@ export interface NavigationItem {
   url: string;
   icon: ReactElement;
   tooltip: string;
+  anchorId: string;
 }
 
 /**
@@ -19,35 +20,41 @@ export default [
     url: "/#introduction",
     icon: <FaHome />,
     tooltip: "Home",
+    anchorId: 'introduction'
   },
   {
     title: "About",
     url: "/#about",
     icon: <BsPerson />,
     tooltip: "About",
+    anchorId: 'aboutme'
   },
   {
     title: "Work History",
     url: "/#work-history",
     icon: <FaBriefcase />,
     tooltip: "Work History",
+    anchorId: 'work-history'
   },
   {
     title: "Portfolio",
     url: "/#portfolio",
     icon: <BsColumnsGap />,
     tooltip: "Projects",
+    anchorId: 'portfolio'
   },
   {
     title: "Blog",
     url: "/#blog",
     icon: <FaBlog />,
     tooltip: "Featured Blogs",
+    anchorId: 'blog'
   },
   {
     title: "Connect",
     url: "/#cta",
     icon: <IoIosMail />,
     tooltip: "Lets Connect",
+    anchorId: 'cta'
   },
 ] as NavigationItem[];

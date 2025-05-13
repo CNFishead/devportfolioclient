@@ -4,10 +4,11 @@ import styles from "./NavigationPane.module.scss";
 import Link from "next/link";
 import pages from "@/data/pages";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import useScrollSpy from "@/hooks/useScrollSpy";
 
 const NavigationPane = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const activeSection = useScrollSpy(pages.map((page) => page.anchorId));
   return (
     <>
       {/* Overlay for mobile nav */}
@@ -26,7 +27,11 @@ const NavigationPane = () => {
       <nav className={`${styles.container} ${isOpen ? styles.open : ""}`} aria-label="Primary Navigation">
         {pages.map((page) => (
           <div key={page.title} className={styles.itemWrapper}>
-            <Link href={page.url} className={styles.navigationItem} aria-label={page.title}>
+            <Link
+              href={page.url}
+              className={`${styles.navigationItem} ${activeSection === page.anchorId ? styles.active : ""}`}
+              aria-label={page.title}
+            >
               <span className={styles.icon}>{page.icon}</span>
               <span className={styles.tooltip}>{page.tooltip}</span>
             </Link>
