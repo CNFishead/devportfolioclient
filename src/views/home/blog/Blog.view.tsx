@@ -46,7 +46,7 @@ const Blog = () => {
   }
 
   return (
-    <section className={styles.container}>
+    <motion.section initial="hidden" animate="visible" className={styles.container}>
       <div className={styles.sectionHeader}>
         <h1 className={styles.sectionTitle}>
           Featured <span className={styles.textFlair}>Blogs</span>
@@ -78,7 +78,7 @@ const Blog = () => {
           See All Blogs
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -20,13 +20,15 @@
 }
 
 .mainContent {
-  padding: 2rem;
-  // background-color: var(--quaternary-light);
+  padding: 5% 0;
   overflow-y: auto;
+
+  @include tablet {
+    padding: 5%;
+  }
 }
 
 .navPane {
-  padding: 1rem;
   color: black; 
 }
 .videoContainer {

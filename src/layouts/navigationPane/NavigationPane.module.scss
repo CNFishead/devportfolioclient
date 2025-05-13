@@ -1,75 +1,132 @@
-@use '@/styles/globals.scss' as *;
+@use "@/styles/globals.scss" as *;
 
 .container {
+  // background-color: var(--primary-dark);
+  color: white;
+  padding: 1rem;
+  z-index: 1000;
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
   padding: 1.5rem 0;
-  gap: 1.5rem; 
+  height: 100%;
+  gap: 1rem;
 
-  @include mobile {
+  @include tablet {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    transform: translateY(100%);
+    opacity: 0;
+    padding-bottom: 3rem; // to leave space for the toggle button
+    justify-content: space-around;
     flex-direction: row;
-    padding: 1rem;
+  }
+
+  &.open {
+    @include tablet {
+      height: auto;
+      opacity: 1;
+      background-color: var(--primary-dark);
+      transform: translateY(0%);
+    }
+  }
+  .navigationItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+      .icon {
+        color: rgba(var(--secondary-rgb), 0.95);
+      }
+    }
+
+    .icon {
+      font-size: 1.2rem;
+      color: rgba(var(--quaternary-rgb), 0.65);
+    }
+
+    .tooltip {
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      white-space: nowrap;
+      background-color: rgba(var(--primary-rgb), 0.95);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      margin-right: 0.5rem;
+
+      @include mobile {
+        top: 100%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        margin-right: 0;
+        margin-top: 0.5rem;
+      }
+    }
+
+    &:hover .tooltip {
+      opacity: 1;
+
+      @include mobile {
+        transform: translateX(-50%);
+      }
+    }
   }
 }
 
+.toggleButton {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1100;
+    background: var(--secondary);
+    color: white;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  &.openBtn {
+    background: var(--secondary-dark);
+  }
+}
+
+.overlay {
+  @include tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
 .itemWrapper {
   position: relative;
-}
-
-.navigationItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background-color: rgba(var(--quaternary-rgb), 0.7);
-  transition: background-color 0.2s ease;
-  text-decoration: none;
-
-  &:hover {
-    background-color: rgba(var(--quaternary-rgb), 0.95);
-  }
-
-  .icon {
-    font-size: 1.2rem;
-    color: var(--primary);
-  }
-
-  .tooltip {
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    white-space: nowrap;
-    background-color: rgba(var(--primary-rgb), 0.95);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.75rem;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    margin-right: 0.5rem;
-
-    @include mobile {
-      top: 100%;
-      left: 50%;
-      right: auto;
-      transform: translateX(-50%);
-      margin-right: 0;
-      margin-top: 0.5rem;
-    }
-  }
-
-  &:hover .tooltip {
-    opacity: 1;
-
-    @include mobile {
-      transform: translateX(-50%);
-    }
-  }
 }
