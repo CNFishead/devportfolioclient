@@ -9,7 +9,7 @@ const Home = () => {
     <div className={styles.container}>
       {homepageViews.map((view) => (
         <React.Fragment key={view._id}>
-          <div className={styles.sectionHeader}>
+          <div className={styles.sectionHeader} id={view.link}>
             <p className={styles.sectionTitle}>
               {view.icon} {view.title}
             </p>

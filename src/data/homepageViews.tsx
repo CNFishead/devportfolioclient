@@ -8,6 +8,7 @@ import AboutMe from "@/views/home/aboutMe/AboutMe.component";
 import WorkHistory from "@/views/home/workHistory/WorkHistory.view";
 import Portfolio from "@/views/home/portfolio/Porfolio.view";
 import Blog from "@/views/home/blog/Blog.view";
+import CTA from "@/views/home/cta/CTA.component";
 
 export interface Views {
   _id: number;
@@ -71,11 +72,11 @@ export default [
   },
   {
     _id: 6,
-    title: "Contact Me",
-    description: "Contact the developer",
-    link: "contact",
+    title: "Lets Connect",
+    description: "",
+    link: "cta",
     icon: <IoIosMail className={styles.icon} />,
-    // component: <ContactForm />,
-    tooltip: "Contact",
+    component: <CTA />,
+    tooltip: "Connect",
   },
 ] as Views[];

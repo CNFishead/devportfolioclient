@@ -45,9 +45,9 @@ export default [
     tooltip: "Featured Blogs",
   },
   {
-    title: "Contact",
-    url: "/#contact",
+    title: "Connect",
+    url: "/#cta",
     icon: <IoIosMail />,
-    tooltip: "Message Me",
+    tooltip: "Lets Connect",
   },
 ] as NavigationItem[];
