@@ -9,7 +9,7 @@
   box-shadow: 0 6px 16px rgba(var(--quaternary-rgb), 0.35);
   transition: all .5s ease;
   gap: 0;
-
+  height: 100%;
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 16px rgba(var(--quaternary-rgb), 0.75);
